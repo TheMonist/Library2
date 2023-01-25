@@ -16,48 +16,74 @@
         </div>
     </nav>
     <main>
-        <div class="container">
-            <div></div>
-            <!--Button for modal-->
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#libraryModal">Add Book</button>
-            </div>
-            <!--Modal and Form-->
-            <div class="modal fade" id="libraryModal" tabindex="-1" aria-labelledby="libraryModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="libraryModalLabel">Add Book to Library</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form action="">
-                        <div class="mb-3">
-                            <label for="title" class="form-label">Title: </label>
-                            <input type="text" class="form-control" aria-describedby="titleHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="author" class="form-label">Author: </label>
-                            <input type="text" class="form-control" aria-describedby="#">
-                        </div>
-                        <div class="mb-3">
-                            <label for="pages" class="form-label">Pages: </label>
-                            <input type="number" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="read" class="form-label">Read: </label>
-                            <input type="text" class="form-control">
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-            </div>
+      <div class="container">
+        <!--Button for modal-->
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#libraryModal">Add Book</button>
         </div>
+        <!--Modal and Form-->
+        <div class="modal fade" id="libraryModal" tabindex="-1" aria-labelledby="libraryModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="libraryModalLabel">Add Book to Library</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="">
+                  <div class="mb-3">
+                    <label for="title" class="form-label">Title: </label>
+                    <input type="text" class="form-control" aria-describedby="titleHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="author" class="form-label">Author: </label>
+                    <input type="text" class="form-control" aria-describedby="#">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pages" class="form-label">Pages: </label>
+                    <input type="number" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                    <label for="read" class="form-label">Read: </label>
+                    <input type="text" class="form-control">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Cards for Display-->
+        <div class="card-group">
+          <div class="card border-dark">
+            <div class="card-body">
+              <h5 class="card-title">The Republic</h5>
+              <p class="card-text">Plato</p>
+              <p class="card-text">500 pages</p>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Read</label>
+              </div>
+              <button type="button" class="btn btn-primary btn-sm">Remove Book</button>
+            </div>
+          </div>
+          <div class="card border-dark">
+            <div class="card-body">
+              <h5 class="card-title">Ethics</h5>
+              <p class="card-text">Baruch Spinoza</p>
+              <p class="card-text">350</p>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Read</label>
+              </div>
+              <button type="button" class="btn btn-primary btn-sm">Remove Book</button>
+            </div>
+          </div>
+        </div>  
+        </div>
+      </div>
     </main>
     <footer></footer>
 
