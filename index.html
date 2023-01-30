@@ -12,7 +12,7 @@
   <!--Header-->
   <nav class="navbar bg-body-tertiary">
       <div class="container-fluid">
-          <h1 class="navbar-text">Bardell University Library System</h1>
+          <h1 class="navbar-text">Banting University Library System</h1>
       </div>
   </nav>
   <main class="container">
@@ -32,19 +32,19 @@
               <form action="">
                 <div class="mb-3">
                   <label for="title" class="form-label">Title: </label>
-                  <input type="text" class="form-control" aria-describedby="titleHelp">
+                  <input type="text" class="form-control" aria-describedby="titleHelp" id="title">
                 </div>
                 <div class="mb-3">
                   <label for="author" class="form-label">Author: </label>
-                  <input type="text" class="form-control" aria-describedby="#">
+                  <input type="text" class="form-control" aria-describedby="#" id="author">
                 </div>
                 <div class="mb-3">
                   <label for="pages" class="form-label">Number of Pages: </label>
-                  <input type="number" class="form-control">
+                  <input type="number" class="form-control" id="pages">
                 </div>
                 <div class="mb-3">
                   <label for="read" class="form-label">Read: </label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" id="read">
                 </div>
               </form>
             </div>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <!--Cards for Display-->
-      <div class="library"></div>
+      <div class="library d-flex flex-column align-items-center flex-md-row flex-wrap"></div>
       <div class="card-group">
         <div class="card border-dark">
           <div class="card-body">
