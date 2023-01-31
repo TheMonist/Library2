@@ -42,14 +42,14 @@
                   <label for="pages" class="form-label">Number of Pages: </label>
                   <input type="number" class="form-control" id="pages">
                 </div>
-                <div class="mb-3">
-                  <label for="read" class="form-label">Read: </label>
-                  <input type="text" class="form-control" id="read">
+                <div class="form-check mb-3">
+                  <label for="read" class="form-check-label">Read? </label>
+                  <input type="checkbox" class="form-check-input" id="read">
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" id="submit" type="submit">Save</button>
                 </div>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" id="submit" type="submit">Save</button>
             </div>
           </div>
         </div>
@@ -84,7 +84,9 @@
       </div>  
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <span>Made by Roger Rosena</span>
+    </footer>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
