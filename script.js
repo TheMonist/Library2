@@ -1,5 +1,5 @@
 let myLibrary = [];
-const submitButton = document.getElementById("submit");
+let submitButton = document.getElementById("submit");
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -10,10 +10,10 @@ function Book(title, author, pages, read) {
 
 //function to add books to liibrary array
 function addBookToLibrary() {
-    const titleData = document.getElementById("title").value;
-    const authorData = document.getElementById("author").value;
-    const pageData = document.getElementById("pages").value;
-    const readData = document.getElementById("read").checked;
+    let titleData = document.getElementById("title").value;
+    let authorData = document.getElementById("author").value;
+    let pageData = document.getElementById("pages").value;
+    let readData = document.getElementById("read").checked;
 
     let book = new Book(titleData, authorData, pageData, readData);
     myLibrary.push(book);
@@ -21,58 +21,59 @@ function addBookToLibrary() {
 };
 
 function updateDisplay() {
-    const library = document.querySelector(".library");
+    let library = document.querySelector(".library");
     //to clear the display
     library.innerHTML = "";
 
     //create element and add book from list
     myLibrary.forEach((book) => {
-        const book = document.createElement("div");
-        book.classList.add("book", "card", "mx-2", "mt-3");
-        book.style.width = "18rem";
-        book.append(library);
+        let books = document.createElement("div");
+        books.classList.add("book", "card", "mx-2", "mt-3");
+        books.style.width = "18rem";
+        library.appendChild(books);
 
-        const cardBody = document.createElement("div");
+        let cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
-        cardBody.append(card);
+        books.appendChild(cardBody);
 
-        const titleInfo = document.createElement("h5");
+        let titleInfo = document.createElement("h5");
         titleInfo.classList.add("card-title");
         titleInfo.textContent = book.title;
-        titleInfo.append(cardBody);
+        cardBody.appendChild(titleInfo);
 
-        const authorInfo = document.createElement("p");
+        let authorInfo = document.createElement("p");
         authorInfo.classList.add("class-text");
         authorInfo.textContent = book.author;
-        authorInfo.append(cardBody);
+        cardBody.appendChild(authorInfo);
 
-        const pageInfo = document.createElement("p");
+        let pageInfo = document.createElement("p");
         pageInfo.classList.add("card-text");
         pageInfo.textContent = book.pages;
-        pageInfo.append(cardBody);
+        cardBody.appendChild(pageInfo);
 
-        const formDiv = document.createElement("div");
+        let formDiv = document.createElement("div");
         formDiv.classList.add("form-check", "form-switch");
-        formDiv.append(cardBody);
+        cardBody.appendChild(formDiv);
 
-        const readInput = document.createElement("input");
+        let readInput = document.createElement("input");
         readInput.classList.add("form-check-input");
-        readInput.append(formDiv);
+        formDiv.appendChild(readInput);
         
-        const readLabel = document.createElement("label");
+        let readLabel = document.createElement("label");
         readLabel.classList.add("form-check-label");
         readLabel.type ="checkbox";
+        //add an eventlistener for the switch
         if (book.read) readLabel = true;
         readLabel.textContent = "Read";
-        readLabel.append(formDiv);
+        formDiv.appendChild(readLabel);
 
-        const removeButton = document.createElement("button");
+        let removeButton = document.createElement("button");
         removeButton.classList.add("btn", "btn-danger", "btn-sm")
         removeButton.textContent = "Remove Book";
-        removeButton.append(cardBody);
+        cardBody.appendChild(removeButton);
 
         removeButton.addEventListener("click", (e) => removeBook(e));
-
+        
     });
 };
 
