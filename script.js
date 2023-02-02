@@ -15,6 +15,13 @@ function addBookToLibrary() {
     let pageData = document.getElementById("pages").value;
     let readData = document.getElementById("read").checked;
 
+    //Handles the toggle switch data
+    if (readData.checked) {
+        readData.value = true;
+    } else {
+        readData.value = false;
+    };
+
     let book = new Book(titleData, authorData, pageData, readData);
     myLibrary.push(book);
     updateDisplay();
@@ -61,9 +68,7 @@ function updateDisplay() {
         
         let readLabel = document.createElement("label");
         readLabel.classList.add("form-check-label");
-        readLabel.type ="checkbox";
-        //add an eventlistener for the switch
-        if (book.read) readLabel = true;
+        readLabel.type = "checkbox";
         readLabel.textContent = "Read";
         formDiv.appendChild(readLabel);
 
