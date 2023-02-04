@@ -1,5 +1,5 @@
 let myLibrary = [];
-let submitButton = document.getElementById("submit");
+let submitButton = document.getElementById("btn-submit");
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -15,7 +15,7 @@ function addBookToLibrary() {
     let pageData = document.getElementById("pages").value;
     let readData = document.getElementById("read").checked;
 
-    //Handles the toggle switch data
+     //Handles the toggle switch data
     if (readData.checked) {
         readData.value = true;
     } else {
@@ -40,7 +40,7 @@ function updateDisplay() {
         library.appendChild(books);
 
         let cardBody = document.createElement("div");
-        cardBody.classList.add("card-body");
+        cardBody.classList.add("card-body", "bg-info");
         books.appendChild(cardBody);
 
         let titleInfo = document.createElement("h5");
@@ -50,12 +50,12 @@ function updateDisplay() {
 
         let authorInfo = document.createElement("p");
         authorInfo.classList.add("class-text");
-        authorInfo.textContent = book.author;
+        authorInfo.textContent = `Author: ${book.author}`;
         cardBody.appendChild(authorInfo);
 
         let pageInfo = document.createElement("p");
         pageInfo.classList.add("card-text");
-        pageInfo.textContent = book.pages;
+        pageInfo.textContent = `Pages: ${book.pages}`;
         cardBody.appendChild(pageInfo);
 
         let formDiv = document.createElement("div");
@@ -64,11 +64,11 @@ function updateDisplay() {
 
         let readInput = document.createElement("input");
         readInput.classList.add("form-check-input");
+        readInput.type = "checkbox";
         formDiv.appendChild(readInput);
         
         let readLabel = document.createElement("label");
         readLabel.classList.add("form-check-label");
-        readLabel.type = "checkbox";
         readLabel.textContent = "Read";
         formDiv.appendChild(readLabel);
 
@@ -82,22 +82,22 @@ function updateDisplay() {
     });
 };
 
-submitButton.addEventListener("click", e => {
-    e.preventDefault();
-    addBookToLibrary();
-    updateDisplay();
-});
-
 function removeBook(event) {
     let targetBook = event.currentTarget.parentNode.parentNode.parentNode.dataset.bookID;
     let index = myLibrary.findIndex(book => book.id == targetBook);
     myLibrary.splice(index, 1);
     updateDisplay();
-}
+};
 
 function updateRead(event) {
     let targetBook = event.currentTarget.parentNode.parentNode.parentNode.dataset.bookID;
     let index = myLibrary.findIndex(book => book.id == targetBook);
     myLibrary.splice(index, 1);
     myLibrary[index].read = !myLibrary[index].read;
-}
+};
+
+submitButton.addEventListener("click", e => {
+    e.preventDefault();
+    addBookToLibrary();
+    updateDisplay();
+});
